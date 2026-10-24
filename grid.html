@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo CSS Grid</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        header {
+            background: #14532d;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+        nav {
+            background: #166534;
+            padding: 14px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 14px;
+            font-weight: bold;
+        }
+        main {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 18px;
+        }
+        section {
+            background: white;
+            padding: 22px;
+            margin-bottom: 22px;
+            border-radius: 10px;
+        }
+        h2 { color: #15803d; }
+        code {
+            background: #e2e8f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 15px;
+            background: #dcfce7;
+            border-radius: 8px;
+        }
+        .item {
+            background: #16a34a;
+            color: white;
+            padding: 22px 8px;
+            text-align: center;
+            border-radius: 6px;
+        }
+        .destaque {
+            grid-column: span 2;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #14532d;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .grid-demo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .destaque {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprendendo CSS Grid</h1>
+        <p>Organizando elementos em linhas e colunas</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="flexbox.html">Flexbox</a>
+        <a href="grid.html">Grid</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. O que é CSS Grid?</h2>
+            <p>
+                CSS Grid é um sistema de layout que permite organizar elementos
+                em duas dimensões: linhas e colunas. Ele facilita a criação de
+                estruturas de páginas com áreas bem definidas e distribuição
+                controlada do espaço.
+            </p>
+            <p>
+                É muito utilizado para organizar galerias de imagens, cartões,
+                painéis, páginas de notícias e estruturas completas de sites.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Como funciona?</h2>
+            <p>
+                Para ativar o Grid, utilizamos <code>display: grid;</code>
+                no elemento pai. Em seguida, definimos a quantidade e o tamanho
+                das colunas e, quando necessário, das linhas.
+            </p>
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}</code></pre>
+            <p>
+                A unidade <code>fr</code> representa uma fração do espaço
+                disponível. Nesse exemplo, são criadas três colunas com
+                proporções iguais.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. Principais propriedades</h2>
+            <ul>
+                <li><strong>grid-template-columns:</strong> define as colunas do layout.</li>
+                <li><strong>grid-template-rows:</strong> define as linhas.</li>
+                <li><strong>gap:</strong> determina o espaço entre linhas e colunas.</li>
+                <li><strong>grid-column:</strong> controla em quais colunas um item aparece ou quantas ocupa.</li>
+                <li><strong>grid-row:</strong> controla em quais linhas um item aparece ou quantas ocupa.</li>
+                <li><strong>justify-items:</strong> alinha os itens horizontalmente dentro de suas áreas.</li>
+                <li><strong>align-items:</strong> alinha os itens verticalmente dentro de suas áreas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Exemplo visual de Grid</h2>
+            <p>
+                Observe a organização em três colunas. O primeiro elemento
+                ocupa duas colunas, enquanto os demais ocupam uma cada.
+            </p>
+            <div class="grid-demo">
+                <div class="item destaque">Elemento 1 (duas colunas)</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+                <div class="item">Elemento 4</div>
+                <div class="item">Elemento 5</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Exemplo de código</h2>
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.destaque {
+    grid-column: span 2;
+}</code></pre>
+            <p>
+                A função repeat evita repetir a definição de cada coluna.
+                Já grid-column: span 2 faz o item ocupar duas colunas.
+                O espaçamento entre os elementos é definido por gap.
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Responsividade</h2>
+            <p>
+                Com media queries, podemos alterar o layout conforme a largura
+                da tela. Neste exemplo, em telas de até 600 pixels, o Grid
+                passa a ter duas colunas.
+            </p>
+            <pre><code>@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>7. Vantagens e aplicações</h2>
+            <ul>
+                <li>Permite controlar linhas e colunas simultaneamente.</li>
+                <li>Facilita a criação de layouts complexos.</li>
+                <li>Permite que elementos ocupem várias linhas ou colunas.</li>
+                <li>Ajuda a criar páginas responsivas e organizadas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusão</h2>
+            <p>
+                O CSS Grid é uma ferramenta importante para construir layouts
+                em duas dimensões. Com linhas, colunas, espaçamentos e áreas,
+                conseguimos organizar o conteúdo de maneira clara e flexível.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hub de Estudos de CSS | Grid</p>
+    </footer>
+</body>
+</html>
