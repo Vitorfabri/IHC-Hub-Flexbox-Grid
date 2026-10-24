@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Flexbox</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+        nav {
+            background: #1e3a8a;
+            padding: 14px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 14px;
+            font-weight: bold;
+        }
+        main {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 18px;
+        }
+        section {
+            background: white;
+            padding: 22px;
+            margin-bottom: 22px;
+            border-radius: 10px;
+        }
+        h2 { color: #1d4ed8; }
+        code {
+            background: #e2e8f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .flex-demo {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 15px;
+            background: #dbeafe;
+            border-radius: 8px;
+        }
+        .item {
+            background: #2563eb;
+            color: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 6px;
+            flex: 1 1 130px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #172554;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprendendo CSS Flexbox</h1>
+        <p>Organizando elementos de forma flexível e responsiva</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="flexbox.html">Flexbox</a>
+        <a href="grid.html">Grid</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. O que é Flexbox?</h2>
+            <p>
+                Flexbox é um modelo de layout do CSS utilizado para organizar
+                elementos em uma dimensão: linha ou coluna. Ele facilita o
+                alinhamento, a distribuição de espaço e a adaptação dos
+                elementos a diferentes tamanhos de tela.
+            </p>
+            <p>
+                É muito utilizado em menus, barras de navegação, botões,
+                cartões e componentes de páginas web.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Como funciona?</h2>
+            <p>
+                Para utilizar o Flexbox, aplicamos <code>display: flex;</code>
+                ao elemento pai. Esse elemento passa a ser o contêiner flexível,
+                e seus filhos diretos são chamados de itens flexíveis.
+            </p>
+            <pre><code>.container {
+    display: flex;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Principais propriedades</h2>
+            <ul>
+                <li><strong>flex-direction:</strong> define a direção dos itens, como row ou column.</li>
+                <li><strong>justify-content:</strong> distribui os itens no eixo principal.</li>
+                <li><strong>align-items:</strong> alinha os itens no eixo transversal.</li>
+                <li><strong>flex-wrap:</strong> permite que os itens passem para outra linha.</li>
+                <li><strong>gap:</strong> define o espaço entre os itens.</li>
+                <li><strong>flex-grow:</strong> determina como um item pode crescer para ocupar espaço disponível.</li>
+                <li><strong>align-self:</strong> permite ajustar individualmente o alinhamento de um item.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Exemplo visual</h2>
+            <p>
+                O exemplo abaixo utiliza Flexbox para distribuir três elementos.
+                Redimensione a janela do navegador para observar a adaptação.
+            </p>
+            <div class="flex-demo">
+                <div class="item">Elemento 1</div>
+                <div class="item">Elemento 2</div>
+                <div class="item">Elemento 3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Exemplo de código</h2>
+            <pre><code>.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.item {
+    flex: 1 1 150px;
+}</code></pre>
+            <p>
+                Nesse exemplo, os itens ficam organizados em linha, centralizados
+                e com espaçamento. Se faltar espaço, eles podem passar para
+                outra linha. A propriedade flex permite ajustar seu crescimento
+                e tamanho inicial.
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Vantagens e aplicações</h2>
+            <ul>
+                <li>Facilita o alinhamento horizontal e vertical.</li>
+                <li>Ajuda a criar interfaces responsivas.</li>
+                <li>Distribui o espaço disponível entre os elementos.</li>
+                <li>É indicado para menus, barras e componentes em uma dimensão.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusão</h2>
+            <p>
+                O Flexbox simplifica a organização dos elementos em linhas
+                ou colunas. Quando combinado com outras propriedades CSS,
+                permite criar interfaces organizadas e adaptáveis.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hub de Estudos de CSS | Flexbox</p>
+    </footer>
+</body>
+</html>
