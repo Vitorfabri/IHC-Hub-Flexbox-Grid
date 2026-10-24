@@ -92,6 +92,7 @@
         <a href="flexbox.html">Flexbox</a>
         <a href="grid.html">Grid</a>
     </nav>
+<<<<<<< HEAD
 
     <main>
         <section>
@@ -193,3 +194,129 @@
     </footer>
 </body>
 </html>
+=======
+</header>
+
+<main>
+    <section class="hero">
+        <p class="etiqueta">GUIA DE CSS · 01</p>
+        <h1>CSS Flexbox</h1>
+        <p>
+            Aprende a organizar, alinhar e distribuir elementos
+            de forma flexível nas páginas web.
+        </p>
+    </section>
+
+    <section class="conteudo">
+        <h2>O que é Flexbox?</h2>
+        <p>
+            Flexbox significa Flexible Box Layout. É um modelo de
+            layout CSS que permite organizar elementos ao longo
+            de um eixo principal, numa linha ou numa coluna.
+            É muito utilizado em menus, botões, cabeçalhos e cartões.
+        </p>
+
+        <div class="codigo">
+            <pre><code>.container {
+    display: flex;
+    gap: 16px;
+}</code></pre>
+        </div>
+
+        <h2>1. Os dois eixos</h2>
+        <div class="cartoes">
+            <article class="cartao">
+                <h3>Eixo principal</h3>
+                <p>
+                    É a direção em que os elementos são organizados.
+                    A propriedade flex-direction define essa direção.
+                </p>
+            </article>
+            <article class="cartao">
+                <h3>Eixo transversal</h3>
+                <p>
+                    É perpendicular ao eixo principal. A propriedade
+                    align-items controla o alinhamento neste eixo.
+                </p>
+            </article>
+        </div>
+
+        <h2>2. Propriedades básicas</h2>
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr><th>Propriedade</th><th>Função</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>display: flex</td><td>Ativa o Flexbox.</td></tr>
+                    <tr><td>flex-direction</td><td>Define linha ou coluna.</td></tr>
+                    <tr><td>justify-content</td><td>Distribui os itens no eixo principal.</td></tr>
+                    <tr><td>align-items</td><td>Alinha os itens no eixo transversal.</td></tr>
+                    <tr><td>gap</td><td>Define o espaço entre os elementos.</td></tr>
+                    <tr><td>flex-wrap</td><td>Permite passar os itens para outra linha.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>3. Exemplo visual</h2>
+        <p>Os três elementos seguintes estão dentro de um contentor Flexbox.</p>
+
+        <div class="exemplo-flex">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+
+        <div class="codigo">
+            <pre><code>.exemplo-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}</code></pre>
+        </div>
+
+        <h2>4. Conceitos intermédios</h2>
+        <div class="cartoes">
+            <article class="cartao">
+                <h3>flex-grow</h3>
+                <p>Controla a forma como os itens crescem para ocupar espaço disponível.</p>
+            </article>
+            <article class="cartao">
+                <h3>flex-shrink</h3>
+                <p>Controla a forma como os itens encolhem quando falta espaço.</p>
+            </article>
+            <article class="cartao">
+                <h3>flex-wrap</h3>
+                <p>Permite que os elementos passem para outra linha.</p>
+            </article>
+            <article class="cartao">
+                <h3>align-self</h3>
+                <p>Permite alterar o alinhamento de um item individual.</p>
+            </article>
+        </div>
+
+        <aside class="destaque">
+            <h2>Quando utilizar Flexbox?</h2>
+            <p>
+                O Flexbox é ideal para menus de navegação, botões,
+                barras de ferramentas, cabeçalhos e grupos de
+                elementos organizados numa direção principal.
+            </p>
+        </aside>
+
+        <div class="navegacao">
+            <a class="botao secundario" href="index.html">← Voltar ao hub</a>
+            <a class="botao" href="grid.html">Aprender Grid →</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>IHC Hub · Guia de Flexbox e Grid</p>
+</footer>
+
+</body>
+</html>
+>>>>>>> 5d8ba8562929852796dd672d563d5fb99df47606
